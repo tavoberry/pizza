@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tamaño-->
@@ -26,6 +27,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-5M-5zZ">
                                 <rect key="frame" x="0.0" y="171" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="A5O-uc-sZF"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="4Go-2p-u4v"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -58,7 +63,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Tipo de Masa" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Tipo de Masa" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
                                 <rect key="frame" x="192" y="97" width="217" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -66,16 +71,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQJ-su-ARt">
-                                <rect key="frame" x="0.0" y="354" width="600" height="216"/>
+                                <rect key="frame" x="0.0" y="192" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="dEc-9G-OBT"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="5yl-W4-RDb"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GQJ-su-ARt" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="XFy-UZ-gcd"/>
                             <constraint firstItem="GQJ-su-ARt" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="bRL-r8-l4G"/>
-                            <constraint firstItem="GQJ-su-ARt" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="33" id="iKX-fz-zMa"/>
+                            <constraint firstItem="GQJ-su-ARt" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="53" id="iKX-fz-zMa"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" constant="182" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tipo de masa" image="second" selectedImage="masa" id="cPa-gy-q4n"/>
@@ -130,7 +139,7 @@
         <!--Tipo de Queso-->
         <scene sceneID="IvN-9E-bPs">
             <objects>
-                <viewController id="3h3-yA-KFX" sceneMemberID="viewController">
+                <viewController id="3h3-yA-KFX" customClass="Queso" customModule="CreacionPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9C1-fD-4dF"/>
                         <viewControllerLayoutGuide type="bottom" id="Mqc-bH-Sop"/>
@@ -138,9 +147,35 @@
                     <view key="view" contentMode="scaleToFill" id="PP0-gz-oVu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Tipo de Queso" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-It-n0A">
+                                <rect key="frame" x="165" y="73" width="235" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fK-Br-iwU">
+                                <rect key="frame" x="13" y="254" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3h3-yA-KFX" id="90c-NY-LVq"/>
+                                    <outlet property="delegate" destination="3h3-yA-KFX" id="wJg-gd-lGD"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mqc-bH-Sop" firstAttribute="top" secondItem="7fK-Br-iwU" secondAttribute="bottom" constant="81" id="CFD-Lb-ckT"/>
+                            <constraint firstItem="7fK-Br-iwU" firstAttribute="leading" secondItem="PP0-gz-oVu" secondAttribute="leadingMargin" constant="-7" id="RCw-vc-TJO"/>
+                            <constraint firstItem="7fK-Br-iwU" firstAttribute="centerX" secondItem="PP0-gz-oVu" secondAttribute="centerX" constant="13" id="Smx-of-Qpy"/>
+                            <constraint firstItem="9eq-It-n0A" firstAttribute="top" secondItem="9C1-fD-4dF" secondAttribute="bottom" constant="53" id="Vis-fK-5KL"/>
+                            <constraint firstItem="9eq-It-n0A" firstAttribute="centerX" secondItem="PP0-gz-oVu" secondAttribute="centerX" constant="-17.5" id="vHh-3A-MaE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tipo de Queso" selectedImage="queso" id="PVc-Bb-G3C"/>
+                    <connections>
+                        <outlet property="pickerQueso" destination="7fK-Br-iwU" id="yfl-qN-bZ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JlA-5N-nCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
